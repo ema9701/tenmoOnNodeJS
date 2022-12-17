@@ -17,15 +17,15 @@ const store = createStore({
             userId: 0,
             balance: 0
         },
-        transfers: [
-            {
-                transferId: 0,
-                amount: 0,
-                status: '',
-                accountFromId: 0,
-                accountToId: 0
-            }
-        ]
+        transfer: {
+            transferId: 0,
+            amount: 0,
+            status: '',
+            accountFromId: 0,
+            accountToId: 0
+        },
+        users: [],
+        transfers: []
     },
     mutations: {
         SET_AUTH_TOKEN(state, accessToken) {
@@ -33,15 +33,21 @@ const store = createStore({
             localStorage.setItem('token', accessToken);
             axios.defaults.headers.common['x-access-token'] = `${accessToken}`
         },
-        SET_USER(state, user) {
+        SET_ACTIVE_USER(state, user) {
             state.user = user;
             localStorage.setItem('user', JSON.stringify(user));
         },
-        SET_ACCOUNT(state, account) {
+        SET_ACTIVE_ACCOUNT(state, account) {
             state.account = account;
         },
-        UPDATE_BALANCE(state, newBalance) {
-            state.account.balance = newBalance;
+        SET_ACTIVE_TRANSFER(state, transfer) {
+            state.transfer = transfer;
+        },
+        SET_USERS(state, users) {
+            state.users = users;
+        },
+        SET_TRANSFERS(state, transfers) {
+            state.transfers = transfers;
         },
         LOGOUT(state) {
             localStorage.removeItem('token');
@@ -49,6 +55,8 @@ const store = createStore({
             state.accessToken = '';
             state.user = {};
             state.account = {};
+            state.users = {};
+            state.transfers = {};
             axios.defaults.headers.common = {};
         }
     },

@@ -59,7 +59,7 @@ export default {
         .then((response) => {
           if (response.status == 200) {
             this.$store.commit("SET_AUTH_TOKEN", response.data.accessToken);
-            this.$store.commit("SET_USER", response.data.user);
+            this.$store.commit("SET_ACTIVE_USER", response.data.user);
             this.$router.push({ name: "home" });
           }
         })

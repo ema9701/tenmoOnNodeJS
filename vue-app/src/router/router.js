@@ -4,7 +4,9 @@ import Login from "../components/Login.vue";
 import Register from "../components/Register.vue";
 import Logout from "../components/Logout"
 import Account from "../components/Account.vue";
+import UserList from "../components/UserList.vue";
 import store from "../store/index";
+
 
 const routes = [
     {
@@ -46,6 +48,14 @@ const routes = [
         meta: {
             requiresAuth: true
         }
+    },
+    {
+        path: '/users',
+        name: 'users',
+        component: UserList,
+        meta: {
+            requiresAuth: true
+        }
     }
 ];
 
@@ -57,7 +67,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
     const requiresAuth = to.matched.some(x => x.meta.requiresAuth);
-    if (requiresAuth && store.state.token === '') {
+    if (requiresAuth && store.state.accessToken === '') {
         next("/login");
     } else {
         next();

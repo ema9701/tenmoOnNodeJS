@@ -1,14 +1,15 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;|&nbsp;
-      <router-link
-        v-bind:to="{ name: 'logout' }"
-        v-if="$store.state.token != ''"
-        >Logout</router-link
-      >
-      |
-      <router-link :to="{ name: 'account' }">Account</router-link>
+      <nav v-if="loggedIn">
+        <router-link v-bind:to="{ name: 'home' }">Home</router-link
+        >&nbsp;|&nbsp;
+        <router-link :to="{ name: 'account' }">Account</router-link
+        >&nbsp;|&nbsp;
+        <router-link :to="{ name: 'users' }">View Users</router-link
+        >&nbsp;|&nbsp;
+        <router-link v-bind:to="{ name: 'logout' }">Logout</router-link>
+      </nav>
     </div>
     <router-view />
   </div>
@@ -17,7 +18,11 @@
 <script>
 export default {
   name: "App",
-  computed: {},
+  computed: {
+    loggedIn() {
+      return this.$store.state.accessToken != "";
+    },
+  },
 };
 </script>
 
