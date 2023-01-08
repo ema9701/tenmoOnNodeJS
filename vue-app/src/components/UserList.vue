@@ -1,22 +1,20 @@
 <template>
-  <div id="user-list" class="container fluid">
-    <b-card-group deck>
-      <b-card header="Tenmo Users">
-        <b-list-group v-for="user in users" :key="user.id">
-          <b-list-group-item :user="user" button>{{
-            user.username
-          }}</b-list-group-item>
-        </b-list-group>
-      </b-card>
-    </b-card-group>
+  <div class="container text-center">
+    <div id="user-list" class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="col" v-for="user in users" :key="user.id">
+        <user-card :user="user" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import userService from "@/services/user.services";
+import UserCard from "@/components/UserCard.vue";
 
 export default {
   name: "user-list",
+  components: { UserCard },
   data() {
     return {};
   },
