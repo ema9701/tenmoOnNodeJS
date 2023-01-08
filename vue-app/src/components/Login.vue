@@ -1,6 +1,6 @@
 <template>
   <div id="login">
-    <div class="row justify-content-md-center">
+    <div class="d-flex justify-content-md-center">
       <div class="card" style="width: 30%">
         <form class="form-signin card-body" @submit.prevent="login">
           <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>

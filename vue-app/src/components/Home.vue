@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="home">
     <h1>Home</h1>
     <ul>
       <li>Id: {{ currentUser.id }}</li>
@@ -26,5 +26,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

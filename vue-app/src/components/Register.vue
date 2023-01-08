@@ -1,6 +1,6 @@
 <template>
   <div id="register">
-    <div class="row justify-content-md-center">
+    <div class="d-flex justify-content-md-center">
       <div class="card" style="width: 30%">
         <form class="form-register" @submit.prevent="register">
           <div class="card-header">

@@ -1,22 +1,29 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <navbar />
-    </div>
-    <main class="container-fluid m-auto text-center">
-      <!-- <div class="container-fluid text-center"> -->
-      <router-view />
-      <!-- </div> -->
+  <div>
+    <navbar />
+    <main>
+      <div class="container-fluid text-center">
+        <router-view />
+      </div>
     </main>
+    <footbar />
   </div>
 </template>
 
 <script>
 import Navbar from "./components/Navbar.vue";
+import Footbar from "./components/Footbar.vue";
+
 export default {
   name: "App",
-  components: { Navbar },
+  components: { Navbar, Footbar },
 };
 </script>
 
-<style></style>
+<style>
+main {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="user-list" class="container fluid">
     <b-card-group deck>
       <b-card header="Tenmo Users">
         <b-list-group v-for="user in users" :key="user.id">
@@ -40,5 +40,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
