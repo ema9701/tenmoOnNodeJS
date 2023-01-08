@@ -3,9 +3,11 @@
     <div id="nav">
       <navbar />
     </div>
-    <div class="container-fluid text-center">
+    <main class="container-fluid m-auto text-center">
+      <!-- <div class="container-fluid text-center"> -->
       <router-view />
-    </div>
+      <!-- </div> -->
+    </main>
   </div>
 </template>
 
