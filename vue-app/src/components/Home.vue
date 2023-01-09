@@ -6,7 +6,7 @@
         <h2 class="card-title">Current user info:</h2>
         <p>Id: {{ currentUser.id }}</p>
         <p>Name: {{ currentUser.username }}</p>
-        <p>Token: {{ token.substring(0, 30) }}</p>
+        <p>Token: {{ currentToken.substring(0, 30) }}</p>
       </div>
       <div></div>
     </div>
@@ -21,10 +21,10 @@ export default {
   },
   computed: {
     currentUser() {
-      return this.$store.state.user;
+      return this.$store.getters.currentUser;
     },
-    token() {
-      return this.$store.state.accessToken;
+    currentToken() {
+      return this.$store.getters.activeToken;
     },
   },
 };

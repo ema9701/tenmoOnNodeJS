@@ -19,8 +19,14 @@ export default {
     return {};
   },
   computed: {
+    currentUser() {
+      return this.$store.getters.currentUser;
+    },
     users() {
-      return this.$store.state.users;
+      return this.$store.getters.activatedUsers;
+    },
+    filtered() {
+      return this.$store.getters.filteredUsers;
     },
   },
   methods: {
