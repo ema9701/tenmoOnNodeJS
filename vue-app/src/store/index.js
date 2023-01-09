@@ -67,14 +67,14 @@ const store = createStore({
     activeToken(state) {
       return state.accessToken;
     },
-    activatedUsers(state) {
-      return state.users;
-    },
-    filteredUsers(state, getters) {
-      return state.users.filter((user) => {
-        return user.id !== getters.currentUser.id;
-      });
-    },
+    // activatedUsers(state) {
+    //   return state.users;
+    // },
+    // filteredUsers(state, getters) {
+    //   return state.users.filter((user) => {
+    //     return user.id !== getters.currentUser.id;
+    //   });
+    // },
   },
   modules: {},
 });

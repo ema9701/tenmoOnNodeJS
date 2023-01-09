@@ -8,24 +8,24 @@
         <button
           class="btn btn-primary"
           type="button"
-          data-bs-target="#transactForm"
+          data-bs-target="#transferForm"
           data-bs-toggle="modal"
         >
-          Transact
+          Transfer
         </button>
 
         <div
           class="modal fade"
-          id="transactForm"
+          id="transferForm"
           tabindex="-1"
-          ariaa-labelledby="transactFormLabel"
+          aria-labelledby="transferFormLabel"
           aria-hidden="true"
         >
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
-                <h1 class="modal-title fs-5" id="transactFormLabel">
-                  Transact Form
+                <h1 class="modal-title fs-5" id="transferFormLabel">
+                  Transfer Form
                 </h1>
                 <button
                   type="button"
@@ -34,7 +34,9 @@
                   aria-label="Close"
                 ></button>
               </div>
-
+              <div class="modal-body">
+                <slot name="transferForm"></slot>
+              </div>
               <div class="modal-footer">
                 <button
                   type="button"
@@ -43,15 +45,11 @@
                 >
                   Close
                 </button>
-                <button type="button" class="btn btn-primary">
-                  Do something
-                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-
       <div class="card-footer text-muted"></div>
     </div>
   </div>
